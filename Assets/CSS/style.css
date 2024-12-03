@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit;
+}
+  
+button {
+    cursor: pointer;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+body{
+    font-family: "TT Commons W01 Medium", sans-serif !important;
+}
+
+nav{
+    gap: 10%;
+}
+
+#left-side{
+    /* background-color: pink; */
+    width: 400px;
+    height: 100vh;
+}
+
+.menu a{
+    margin-bottom: 10px;
+    color: #252a31;
+    padding: 8px;
+    display: flex;
+    gap: 10px;
+    width: 80%;
+}
+
+.menu a:hover{
+    background-color: #f7f8fe;
+    color: #1935aa;
+}
+
+.dropdown-menu li{
+    font-size: small;
+    padding: 8px;
+}
+
+.dropdown-menu li:hover{
+    background-color: #f7f8fe;
+}
+
+#c-link, #web-link, #study-link{
+    background-color: #1935aa;
+    color: white;
+    font-size: small;
+}
+
+#c-link:hover, #web-link:hover, #study-link:hover{
+    background-color: white;
+    color: #1935aa;
+    border: 1px solid #1935aa;
+}
+
+@media screen and (max-width: 991px) {
+    .menu {
+        position: fixed;
+        top: 60px; /* Ensure it starts below the nav */
+        left: -100%; /* Initially hidden off-screen */
+        width: 70%; /* Adjust as needed */
+        height: calc(100% - 60px); /* Full height minus nav */
+        z-index: 10; /* Below the nav */
+        background-color: #1935aa; /* Matches branding */
+        transition: left 1.5s ease-in-out, 1.5s ease-in-out; /* Smooth animation */
+        opacity: 0; /* Invisible initially */
+    }
+
+    .menu a{
+        color: white;
+    }
+
+    .menu.open {
+        left: 0; /* Slides the menu into view */
+        opacity: 1; /* Fully visible */
+        width: 70%;
+    }
+
+    body.menu-active {
+        overflow: hidden; /* Disable background scrolling when menu is active */
+    }
+
+    nav{
+        height: 60px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .menu{
+        border-right: 1px solid #f3f4f6;
+    }
+}
